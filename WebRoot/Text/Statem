@@ -1,0 +1,79 @@
+
+#表6.2
+	所有信息
+	bianhao,cost_comparison_original_buruzizhu_siliao,cost_comparison_original_buruzizhu_yimiao,cost_comparison_original_buruzizhu_baojian,cost_comparison_jiyooh_buruzizhu_siliao,cost_comparison_jiyooh_buruzizhu_yimiao,cost_comparison_jiyooh_buruzizhu_baojian,cost_comparison_original_baoyuzhu_siliao,cost_comparison_original_baoyuzhu_yimiao,cost_comparison_original_baoyuzhu_baojian,cost_comparison_jiyooh_baoyuzhu_siliao,cost_comparison_jiyooh_baoyuzhu_yimiao,cost_comparison_jiyooh_baoyuzhu_baojian,cost_comparison_original_yufei_siliao,cost_comparison_original_yufei_yimiao,cost_comparison_original_yufei_baojian,cost_comparison_jiyooh_yufei_siliao,cost_comparison_jiyooh_yufei_yimiao,cost_comparison_jiyooh_yufei_baojian,cost_comparison_original_huaiyunmuzhu_siliao,cost_comparison_original_huaiyunmuzhu_yimiao,cost_comparison_original_huaiyunmuzhu_baojian,cost_comparison_jiyooh_huaiyunmuzhu_siliao,cost_comparison_jiyooh_huaiyunmuzhu_yimiao,cost_comparison_jiyooh_huaiyunmuzhu_baojian,cost_comparison_original_burumuzhu_siliao,cost_comparison_original_burumuzhu_yimiao,cost_comparison_original_burumuzhu_baojian,cost_comparison_jiyooh_burumuzhu_siliao,cost_comparison_jiyooh_burumuzhu_yimiao,cost_comparison_jiyooh_burumuzhu_baojian
+	添加所有数据语句
+	insert into details_6_2(bianhao,cost_comparison_original_buruzizhu_siliao,cost_comparison_original_buruzizhu_yimiao,cost_comparison_original_buruzizhu_baojian,cost_comparison_jiyooh_buruzizhu_siliao,cost_comparison_jiyooh_buruzizhu_yimiao,cost_comparison_jiyooh_buruzizhu_baojian,cost_comparison_original_baoyuzhu_siliao,cost_comparison_original_baoyuzhu_yimiao,cost_comparison_original_baoyuzhu_baojian,cost_comparison_jiyooh_baoyuzhu_siliao,cost_comparison_jiyooh_baoyuzhu_yimiao,cost_comparison_jiyooh_baoyuzhu_baojian,cost_comparison_original_yufei_siliao,cost_comparison_original_yufei_yimiao,cost_comparison_original_yufei_baojian,cost_comparison_jiyooh_yufei_siliao,cost_comparison_jiyooh_yufei_yimiao,cost_comparison_jiyooh_yufei_baojian,cost_comparison_original_huaiyunmuzhu_siliao,cost_comparison_original_huaiyunmuzhu_yimiao,cost_comparison_original_huaiyunmuzhu_baojian,cost_comparison_jiyooh_huaiyunmuzhu_siliao,cost_comparison_jiyooh_huaiyunmuzhu_yimiao,cost_comparison_jiyooh_huaiyunmuzhu_baojian,cost_comparison_original_burumuzhu_siliao,cost_comparison_original_burumuzhu_yimiao,cost_comparison_original_burumuzhu_baojian,cost_comparison_jiyooh_burumuzhu_siliao,cost_comparison_jiyooh_burumuzhu_yimiao,cost_comparison_jiyooh_burumuzhu_baojian) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+	数据库表
+	USE test ;
+ 	CREATE TABLE details_6_2(
+		bianhao varchar(255),
+		cost_comparison_original_buruzizhu_siliao varchar(255),
+		cost_comparison_original_buruzizhu_yimiao varchar(255),
+		cost_comparison_original_buruzizhu_baojian varchar(255),
+		cost_comparison_jiyooh_buruzizhu_siliao varchar(255),
+		cost_comparison_jiyooh_buruzizhu_yimiao varchar(255),
+		cost_comparison_jiyooh_buruzizhu_baojian varchar(255),
+		cost_comparison_original_baoyuzhu_siliao varchar(255),
+		cost_comparison_original_baoyuzhu_yimiao varchar(255),
+		cost_comparison_original_baoyuzhu_baojian varchar(255),
+		cost_comparison_jiyooh_baoyuzhu_siliao varchar(255),
+		cost_comparison_jiyooh_baoyuzhu_yimiao varchar(255),
+		cost_comparison_jiyooh_baoyuzhu_baojian varchar(255),
+		cost_comparison_original_yufei_siliao varchar(255),
+		cost_comparison_original_yufei_yimiao varchar(255),
+		cost_comparison_original_yufei_baojian varchar(255),
+		cost_comparison_jiyooh_yufei_siliao varchar(255),
+		cost_comparison_jiyooh_yufei_yimiao varchar(255),
+		cost_comparison_jiyooh_yufei_baojian varchar(255),
+		cost_comparison_original_huaiyunmuzhu_siliao varchar(255),
+		cost_comparison_original_huaiyunmuzhu_yimiao varchar(255),
+		cost_comparison_original_huaiyunmuzhu_baojian varchar(255),
+		cost_comparison_jiyooh_huaiyunmuzhu_siliao varchar(255),
+		cost_comparison_jiyooh_huaiyunmuzhu_yimiao varchar(255),
+		cost_comparison_jiyooh_huaiyunmuzhu_baojian varchar(255),
+		cost_comparison_original_burumuzhu_siliao varchar(255),
+		cost_comparison_original_burumuzhu_yimiao varchar(255),
+		cost_comparison_original_burumuzhu_baojian varchar(255),
+		cost_comparison_jiyooh_burumuzhu_siliao varchar(255),
+		cost_comparison_jiyooh_burumuzhu_yimiao varchar(255),
+		cost_comparison_jiyooh_burumuzhu_baojian varchar(255),
+		PRIMARY KEY (bianhao)
+	) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+#2.1
+	所有信息
+	h_number,h_siliaopinzhong,h_rmb,h_y_name_1,h_y_name_2,h_y_name_3,h_y_name_4,h_factory_1,h_factory_2,h_factory_3,h_factory_4,h_b_drug_1,h_b_drug_2,h_b_drug_3,h_b_drug_4,b_number,b_siliaopinzhong,b_rmb,b_y_name_1,b_y_name_2,b_y_name_3,b_y_name_4,b_factory_1,b_factory_2,b_factory_3,b_factory_4,b_b_drug_1,b_b_drug_2,b_b_drug_3,b_b_drug_4
+	@纵向的
+	h_number,
+	h_siliaopinzhong,
+	h_rmb,
+	h_y_name_1,
+	h_y_name_2,
+	h_y_name_3,
+	h_y_name_4,
+	h_factory_1,
+	h_factory_2,
+	h_factory_3,
+	h_factory_4,
+	h_b_drug_1,
+	h_b_drug_2,
+	h_b_drug_3,
+	h_b_drug_4,
+	b_number,
+	b_siliaopinzhong,
+	b_rmb,
+	b_y_name_1,
+	b_y_name_2,
+	b_y_name_3,
+	b_y_name_4,
+	b_factory_1,
+	b_factory_2,
+	b_factory_3,
+	b_factory_4,
+	b_b_drug_1,
+	b_b_drug_2,
+	b_b_drug_3,
+	b_b_drug_4
+
+	

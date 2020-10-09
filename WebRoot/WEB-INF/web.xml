@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+  <display-name></display-name>	
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+<!-- 登录过滤器  -->
+  <filter>
+  	<filter-name>Filters</filter-name>
+  	<filter-class>com.jiyoo.util.PageFilter</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>Filters</filter-name>
+  	<url-pattern>/*</url-pattern>
+  </filter-mapping> 
+<!-- 微信订阅号连接 --> 
+  <servlet>
+  	<servlet-name>WeiXinUrl</servlet-name>
+  	<servlet-class>com.jiyoo.util.WeiXinToken</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>WeiXinUrl</servlet-name>
+  	<url-pattern>/wxtoken.do</url-pattern>
+  </servlet-mapping>
+  
+<!-- 客户信息中间页面 查询框 -->
+  <servlet>
+  	<servlet-name>FaceSerlet</servlet-name>
+  	<servlet-class>com.jiyoo.service.FaceService</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>FaceSerlet</servlet-name>
+  	<url-pattern>/jibencoll.do</url-pattern>
+  </servlet-mapping>
+  
+<!-- excel导出 -->
+  <servlet>
+  	<servlet-name>ExcelFileOut</servlet-name>
+  	<servlet-class>com.jiyoo.service.ExcelFileOutServive</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>ExcelFileOut</servlet-name>
+  	<url-pattern>/excelfileout.do</url-pattern>
+  </servlet-mapping>
+<!-- 客户信息中间页面 遍历详情 --> 
+  <servlet>
+  	<servlet-name>FaceDetails</servlet-name>
+  	<servlet-class>com.jiyoo.service.FaceDetails</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>FaceDetails</servlet-name>
+  	<url-pattern>/Fdetails.do</url-pattern>
+  </servlet-mapping>
+<!-- 数据管理    文件上传-->
+	<servlet>
+		<servlet-name>FileUp</servlet-name>
+		<servlet-class>com.jiyoo.service.FileUpLoad</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>FileUp</servlet-name>
+		<url-pattern>/fileupload.do</url-pattern>
+	</servlet-mapping>
+<!-- 数据管理    文件遍历-->
+	<servlet>
+		<servlet-name>FileStrav</servlet-name>
+		<servlet-class>com.jiyoo.service.FileTraversal</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>FileStrav</servlet-name>
+		<url-pattern>/traversal.do</url-pattern>
+	</servlet-mapping>
+<!-- 数据文件下载 -->
+	<servlet>
+		<servlet-name>DownServlet</servlet-name>
+		<servlet-class>com.jiyoo.service.FileDownService</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DownServlet</servlet-name>
+		<url-pattern>/filedown.do</url-pattern>
+	</servlet-mapping>
+<!-- Excel批量上传格式下载 -->
+	<servlet>
+		<servlet-name>ExcelFileDown</servlet-name>
+		<servlet-class>com.jiyoo.util.ExcelDownService</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ExcelFileDown</servlet-name>
+		<url-pattern>/excelfilestyledown.do</url-pattern>
+	</servlet-mapping>
+<!-- 档案详情录入  -->
+	<servlet>
+		<servlet-name>CustomerDetailsService</servlet-name>
+		<servlet-class>com.jiyoo.service.CustomerDetailsService</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CustomerDetailsService</servlet-name>
+		<url-pattern>/jibenxinxi.do</url-pattern>
+	</servlet-mapping>
+<!--验证编号是否存在 -->	
+	<servlet>
+		<servlet-name>IfThereIs</servlet-name>
+		<servlet-class>com.jiyoo.service.BianhaoIfThereIsService</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>IfThereIs</servlet-name>
+		<url-pattern>/yesorno.do</url-pattern>
+	</servlet-mapping>
+<!-- 详情修改 -->
+	<servlet>
+		<servlet-name>UserUpdate</servlet-name>
+		<servlet-class>com.jiyoo.service.UserUpdateService</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UserUpdate</servlet-name>
+		<url-pattern>/UserUpdate.do</url-pattern>
+	</servlet-mapping>
+<!-- 删除人员 -->
+	<servlet>
+		<servlet-name>DataDeleatAll</servlet-name>
+		<servlet-class>com.jiyoo.service.DataDeleatAllService</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DataDeleatAll</servlet-name>
+		<url-pattern>/dele.do</url-pattern>
+	</servlet-mapping>
+<!-- 回访报告提交 -->
+	<servlet>
+		<servlet-name>HuiFangBaoGao</servlet-name>
+		<servlet-class>com.jiyoo.service.HuiFangService</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>HuiFangBaoGao</servlet-name>
+		<url-pattern>/huifang.do</url-pattern>
+	</servlet-mapping>
+<!-- 回访报告查询 -->
+	<servlet>
+		<servlet-name>SelectHuiFang</servlet-name>
+		<servlet-class>com.jiyoo.service.SelectHuiFangService</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SelectHuiFang</servlet-name>
+		<url-pattern>/selecthuifang.do</url-pattern>
+	</servlet-mapping>
+<!-- 回访报告查询遍历 -->
+	<servlet>
+		<servlet-name>HuiFangList</servlet-name>
+		<servlet-class>com.jiyoo.service.HuiFangListService</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>HuiFangList</servlet-name>
+		<url-pattern>/huifanglist.do</url-pattern>
+	</servlet-mapping>
+<!-- 疫苗档案 -->
+	<servlet>
+		<servlet-name>YiMiaoSerlet</servlet-name>
+		<servlet-class>com.jiyoo.service.YiMiaoService</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>YiMiaoSerlet</servlet-name>
+		<url-pattern>/yimiaodangans.do</url-pattern>
+	</servlet-mapping>
+<!-- 疫苗档案 遍历-->
+	<servlet>
+		<servlet-name>SelectYiMiaoList</servlet-name>
+		<servlet-class>com.jiyoo.service.SelectYiMiaoService</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SelectYiMiaoList</servlet-name>
+		<url-pattern>/selectyimiao.do</url-pattern>
+	</servlet-mapping>
+<!-- 疫苗档案 修改-->
+	<servlet>
+		<servlet-name>UpdateYimiaos</servlet-name>
+		<servlet-class>com.jiyoo.service.UpdateYiMiaoService</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UpdateYimiaos</servlet-name>
+		<url-pattern>/updateyimiao.do</url-pattern>
+	</servlet-mapping>
+<!-- 保健档案 -->
+	<servlet>
+		<servlet-name>BaoJianDangAn</servlet-name>
+		<servlet-class>com.jiyoo.service.BaoJianDangAnService</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>BaoJianDangAn</servlet-name>
+		<url-pattern>/baojiandangans.do</url-pattern>
+	</servlet-mapping>
+<!-- 保健档案遍历 -->
+	<servlet>
+		<servlet-name>TraverseBaoJian</servlet-name>
+		<servlet-class>com.jiyoo.service.TraverseBaoJianService</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>TraverseBaoJian</servlet-name>
+		<url-pattern>/traversebaojian.do</url-pattern>
+	</servlet-mapping>
+<!-- 保健档案修改 -->
+	<servlet>
+		<servlet-name>UpDateBaoJianDangAn</servlet-name>
+		<servlet-class>com.jiyoo.service.UpDateBaoJianDangAnService</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UpDateBaoJianDangAn</servlet-name>
+		<url-pattern>/updatebaojiandangan.do</url-pattern>
+	</servlet-mapping>
+<!-- 饲料档案 -->
+	<servlet>
+		<servlet-name>SiLiaoDangAnUpload</servlet-name>
+		<servlet-class>com.jiyoo.service.SiLiaoDangAnUploadService</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SiLiaoDangAnUpload</servlet-name>
+		<url-pattern>/sluplocation.do</url-pattern>
+	</servlet-mapping>
+<!-- 饲料档案遍历 -->
+	<servlet>
+		<servlet-name>SiLiaoTraverseX</servlet-name>
+		<servlet-class>com.jiyoo.service.SiLiaoTraverseService</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SiLiaoTraverseX</servlet-name>
+		<url-pattern>/siliaotraverse.do</url-pattern>
+	</servlet-mapping>
+<!-- 饲料档案遍历修改-->
+	<servlet>
+		<servlet-name>SiLiaoModifyUp</servlet-name>
+		<servlet-class>com.jiyoo.service.SiLiaoModifyService</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SiLiaoModifyUp</servlet-name>
+		<url-pattern>/siliaomodify.do</url-pattern>
+	</servlet-mapping>
+<!-- 登录 -->
+	<servlet>
+		<servlet-name>LoginLest</servlet-name>
+		<servlet-class>com.jiyoo.service.LoginUser</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LoginLest</servlet-name>
+		<url-pattern>/log.do</url-pattern>
+	</servlet-mapping>
+<!-- 退出登录 -->
+	<servlet>
+		<servlet-name>LoginDestroy</servlet-name>
+		<servlet-class>com.jiyoo.service.LoginDestroyService</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LoginDestroy</servlet-name>
+		<url-pattern>/logdestroy.do</url-pattern>
+	</servlet-mapping>
+<!-- 注册登录账号-->
+	<servlet>
+		<servlet-name>ZhuCeLog</servlet-name>
+		<servlet-class>com.jiyoo.service.ZhuCeLogService</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ZhuCeLog</servlet-name>
+		<url-pattern>/zhuce.do</url-pattern>
+	</servlet-mapping>
+<!-- 查询原来登录密码正确性-->
+	<servlet>
+		<servlet-name>ChaGengs</servlet-name>
+		<servlet-class>com.jiyoo.service.ChaGengService</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ChaGengs</servlet-name>
+		<url-pattern>/chageng.do</url-pattern>
+	</servlet-mapping>
+<!-- 密码修改 -->
+	<servlet>
+		<servlet-name>LogPassWordUpdate</servlet-name>
+		<servlet-class>com.jiyoo.service.LogPassWordUpdateService</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LogPassWordUpdate</servlet-name>
+		<url-pattern>/logpwdupdate.do</url-pattern>
+	</servlet-mapping>
+<!-- 登录列表 -->
+	<servlet>
+		<servlet-name>LoginListConfig</servlet-name>
+		<servlet-class>com.jiyoo.service.LoginListConfigService</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LoginListConfig</servlet-name>
+		<url-pattern>/loginlistconfig.do</url-pattern>
+	</servlet-mapping>logidupdate
+<!-- 密码重置 -->
+	<servlet>
+		<servlet-name>PasswordResetInit</servlet-name>
+		<servlet-class>com.jiyoo.service.PasswordResetInitService</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>PasswordResetInit</servlet-name>
+		<url-pattern>/resetinit.do</url-pattern>
+	</servlet-mapping>
+<!-- 登录列表信息修改/权限修改 -->
+	<servlet>
+		<servlet-name>LogIdUpdateServlet</servlet-name>
+		<servlet-class>com.jiyoo.service.LogIdUpdateService</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LogIdUpdateServlet</servlet-name>
+		<url-pattern>/logidupdate.do</url-pattern>
+	</servlet-mapping>
+<!-- 统计 -->	
+	<servlet>
+		<servlet-name>SelectCount</servlet-name>
+		<servlet-class>com.jiyoo.service.SelectCountService</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SelectCount</servlet-name>
+		<url-pattern>/selectcount.do</url-pattern>
+	</servlet-mapping>
+<!-- 规模范围查询 -->
+	<servlet>
+		<servlet-name>GuiMoList</servlet-name>
+		<servlet-class>com.jiyoo.service.GuiMoListService</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>GuiMoList</servlet-name>
+		<url-pattern>/guimolist.do</url-pattern>
+	</servlet-mapping>
+<!-- 年龄范围查询 -->	
+	<servlet>
+		<servlet-name>AgeMoList</servlet-name>
+		<servlet-class>com.jiyoo.service.AgeListService</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AgeMoList</servlet-name>
+		<url-pattern>/agelist.do</url-pattern>
+	</servlet-mapping>
+<!-- 大区添加 -->	
+	<servlet>
+		<servlet-name>DaQuUp</servlet-name>
+		<servlet-class>com.jiyoo.service.DaQuUpService</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DaQuUp</servlet-name>
+		<url-pattern>/daquup.do</url-pattern>
+	</servlet-mapping>
+<!-- 大区查询 -->	
+	<servlet>
+		<servlet-name>DaQuSelect</servlet-name>
+		<servlet-class>com.jiyoo.service.DaQuSelectService</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DaQuSelect</servlet-name>
+		<url-pattern>/daquselects.do</url-pattern>
+	</servlet-mapping>
+<!-- 门店经理录入 -->	
+	<servlet>
+		<servlet-name>MenDianJingLi</servlet-name>
+		<servlet-class>com.jiyoo.service.MenDianJingLiService</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>MenDianJingLi</servlet-name>
+		<url-pattern>/mendainload.do</url-pattern>
+	</servlet-mapping>
+<!-- 门店经理查询 -->	
+	<servlet>
+		<servlet-name>SelectMenDian</servlet-name>
+		<servlet-class>com.jiyoo.service.SelectMenDianService</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SelectMenDian</servlet-name>
+		<url-pattern>/selectmendian.do</url-pattern>
+	</servlet-mapping>
+<!-- excel处理 -->
+	<servlet>
+		<servlet-name>ExcelAlter</servlet-name>
+		<servlet-class>com.jiyoo.util.ExcelAlterService</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ExcelAlter</servlet-name>
+		<url-pattern>/excelalerts.do</url-pattern>
+	</servlet-mapping>
+<!-- 查询所有门店 -->
+	<servlet>
+		<servlet-name>SelectFromMendianVip</servlet-name>
+		<servlet-class>com.jiyoo.service.SelMenDianService</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SelectFromMendianVip</servlet-name>
+		<url-pattern>/selmendian.do</url-pattern>
+	</servlet-mapping>
+<!-- 大区查 -->	
+	<servlet>
+		<servlet-name>DaQuFunctionServlet</servlet-name>
+		<servlet-class>com.jiyoo.service.DaQuFunctionService</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DaQuFunctionServlet</servlet-name>
+		<url-pattern>/daqufunction.do</url-pattern>
+	</servlet-mapping>
+<!-- 大区改 -->	
+	<servlet>
+		<servlet-name>DaQuUpDateServlets</servlet-name>
+		<servlet-class>com.jiyoo.service.DaQuUpDateService</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DaQuUpDateServlets</servlet-name>
+		<url-pattern>/daquupdatedatalist.do</url-pattern>
+	</servlet-mapping>
+<!-- 查询会员大区所属-->	
+	<servlet>
+		<servlet-name>DaQuGuiShuChaXun</servlet-name>
+		<servlet-class>com.jiyoo.service.DaQuGuiShuService</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DaQuGuiShuChaXun</servlet-name>
+		<url-pattern>/daqusuosuchaxun.do</url-pattern>
+	</servlet-mapping>	
+<!-- 门店经理修改页面id查询 -->
+	<servlet>
+		<servlet-name>MenDianXiuGaiYeMianPage</servlet-name>
+		<servlet-class>com.jiyoo.service.MenDianXiuGaiServive</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>MenDianXiuGaiYeMianPage</servlet-name>
+		<url-pattern>/mxiugaiyemian.do</url-pattern>
+	</servlet-mapping>
+<!-- 门店经理修改页面id修改 -->
+	<servlet>
+		<servlet-name>MenDianIdUpDateOption</servlet-name>
+		<servlet-class>com.jiyoo.service.MenDianIdUpDateOptionService</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>MenDianIdUpDateOption</servlet-name>
+		<url-pattern>/mendianupdatetwo.do</url-pattern>
+	</servlet-mapping>
+<!-- 门店所属会员全查 -->
+	<servlet>
+		<servlet-name>MenDianVipAll</servlet-name>
+		<servlet-class>com.jiyoo.service.MenDianVipAllService</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>MenDianVipAll</servlet-name>
+		<url-pattern>/mdaquvipallsel.do</url-pattern>
+	</servlet-mapping>
+</web-app>

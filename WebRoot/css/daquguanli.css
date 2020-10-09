@@ -1,0 +1,22 @@
+#table{
+	border:none;
+	border-collapse:collapse;
+	background-color:MediumTurquoise;
+	width:100%;
+}
+table tr td{
+	border:0px solid black;
+	height:2em;
+}
+#td3 {
+	width: 20%;
+	padding:0px;
+}
+input {
+	height:2em;
+	text-align: center;
+	-moz-border-radius: 0px;-webkit-border-radius: 0px; border-radius:15px;
+}
+#gongneng input{
+	border-radius:5px;
+}

@@ -1,0 +1,89 @@
+    table{
+    	border-collapse:collapse;border:none;
+    }
+    input{
+        font-size: 18px;
+    	
+    }
+    .m td{
+    	height:5em;
+    	width:10em;
+    }
+    .k_ip{
+    	width:20em;
+    }
+    td{
+    	height:60px;
+    	border:1px solid black;
+    }
+    .k td{
+    	height:32px;
+    	border:1px solid black;
+    }
+    .k input{
+    	height:30px;
+    	border:none;
+    }
+    .m input{
+    	width:160px;
+    	height:78px;
+    	border:none;
+    }
+	.m_t div input{
+	    width:160px;
+	    height:25.3px;
+	    }
+	.s1{
+    	height:3em;
+    	width:10em;
+    }
+    .s2{
+    	height:3em;
+    	width:25em;
+    }
+    .s2 input{
+    	border:0px;
+    	height:3em;
+    	width:25em;
+    }
+    .report input{
+    	border:0px;
+    	height:10em;
+    	width:35em;
+    }
+    .cost_comparison input{
+    	height:3em;
+    	width:5em;	
+    	border:0px;
+    }
+    textarea{
+    	overflow:auto;
+    	border:none;
+    }
+    .Comprehensive_benefits{
+    	overflow:auto;
+    	border:1px solid black;
+    }
+    .yf input{
+    	border:0px;
+    	height:1em;
+    	width:7em;
+    }
+    .yf_inp{
+    	border:1px solid;
+    	border-left:none;
+    	border-right:none;
+    }
+    .k_tongdian input{
+    	border:0px;
+    	height:1em;
+    	width:40em;
+    }
+    .yf_inps input{
+    	border:0px;
+    	height:3em;
+    }
+    .p_g td input{
+    	border:0px;
+    	height:3em;
+    }

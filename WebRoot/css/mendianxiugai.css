@@ -1,0 +1,20 @@
+body{ 
+	margin:0px;
+}
+table{
+	padding:0px;
+	margin: 0px;
+	width: 100%;
+}
+.input {
+	height:2em;
+	text-align: center;
+	-moz-border-radius: 0px;-webkit-border-radius: 0px; border-radius:15px;
+}
+#table{
+	border:none;
+	border-collapse:collapse;
+	background-color:MediumTurquoise;
+	height:2em;
+}
+
